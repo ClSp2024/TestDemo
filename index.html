@@ -30,11 +30,11 @@
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
         <script src="js/leaflet-control-geocoder.Geocoder.js"></script>
-        <script src="data/Bedrijven_Register_Weerwoord_1.js"></script>
+        <script src="data/KBK20_Straatassen_1.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[51.85956831806976,4.3421756643891305],[51.97706433383467,4.606435783615417]]);
+        }).fitBounds([[51.90073699099058,4.457467501313159],[51.930102228038635,4.523518066627686]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -76,87 +76,34 @@
         });
         layer_OSMStandard_0;
         map.addLayer(layer_OSMStandard_0);
-        function pop_Bedrijven_Register_Weerwoord_1(feature, layer) {
+        function pop_KBK20_Straatassen_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['OBJECTID'] !== null ? autolinker.link(feature.properties['OBJECTID'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['peiljaar'] !== null ? autolinker.link(feature.properties['peiljaar'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">KLASSE</th>\
+                        <td>' + (feature.properties['KLASSE'] !== null ? autolinker.link(feature.properties['KLASSE'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Unieke_ves'] !== null ? autolinker.link(feature.properties['Unieke_ves'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['GEMCODE'] !== null ? autolinker.link(feature.properties['GEMCODE'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Naam_vesti'] !== null ? autolinker.link(feature.properties['Naam_vesti'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">STRAATCODE</th>\
+                        <td>' + (feature.properties['STRAATCODE'] !== null ? autolinker.link(feature.properties['STRAATCODE'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">straat_ves</th>\
-                        <td class="visible-with-data" id="straat_ves">' + (feature.properties['straat_ves'] !== null ? autolinker.link(feature.properties['straat_ves'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['NIVO'] !== null ? autolinker.link(feature.properties['NIVO'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['huisnummer'] !== null ? autolinker.link(feature.properties['huisnummer'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['VOORKOMEN'] !== null ? autolinker.link(feature.properties['VOORKOMEN'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['huisletter'] !== null ? autolinker.link(feature.properties['huisletter'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">STATUS</th>\
+                        <td>' + (feature.properties['STATUS'] !== null ? autolinker.link(feature.properties['STATUS'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['huislett_1'] !== null ? autolinker.link(feature.properties['huislett_1'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['postcode_v'] !== null ? autolinker.link(feature.properties['postcode_v'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['gemeentenu'] !== null ? autolinker.link(feature.properties['gemeentenu'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['gebied'] !== null ? autolinker.link(feature.properties['gebied'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['buurt'] !== null ? autolinker.link(feature.properties['buurt'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['sbtdeel'] !== null ? autolinker.link(feature.properties['sbtdeel'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['blok'] !== null ? autolinker.link(feature.properties['blok'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['tircode'] !== null ? autolinker.link(feature.properties['tircode'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['X_coördin'] !== null ? autolinker.link(feature.properties['X_coördin'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Y_coördin'] !== null ? autolinker.link(feature.properties['Y_coördin'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['betrouwbaa'] !== null ? autolinker.link(feature.properties['betrouwbaa'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">sbi2008</th>\
-                        <td class="visible-with-data" id="sbi2008">' + (feature.properties['sbi2008'] !== null ? autolinker.link(feature.properties['sbi2008'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['sbi_sectie'] !== null ? autolinker.link(feature.properties['sbi_sectie'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['BAG_gebrui'] !== null ? autolinker.link(feature.properties['BAG_gebrui'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['BAG_opperv'] !== null ? autolinker.link(feature.properties['BAG_opperv'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['bagna_id'] !== null ? autolinker.link(feature.properties['bagna_id'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['BAG_verbli'] !== null ? autolinker.link(feature.properties['BAG_verbli'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['typepand'] !== null ? autolinker.link(feature.properties['typepand'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['num1'] !== null ? autolinker.link(feature.properties['num1'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['SHAPE_Length'] !== null ? autolinker.link(feature.properties['SHAPE_Length'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -166,42 +113,33 @@
             popup.setContent(updatedContent);
         }
 
-        function style_Bedrijven_Register_Weerwoord_1_0() {
+        function style_KBK20_Straatassen_1_0() {
             return {
-                pane: 'pane_Bedrijven_Register_Weerwoord_1',
-                radius: 4.0,
+                pane: 'pane_KBK20_Straatassen_1',
                 opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
+                color: 'rgba(8,11,8,0.647)',
                 dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(133,182,111,1.0)',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
                 interactive: true,
             }
         }
-        map.createPane('pane_Bedrijven_Register_Weerwoord_1');
-        map.getPane('pane_Bedrijven_Register_Weerwoord_1').style.zIndex = 401;
-        map.getPane('pane_Bedrijven_Register_Weerwoord_1').style['mix-blend-mode'] = 'normal';
-        var layer_Bedrijven_Register_Weerwoord_1 = new L.geoJson(json_Bedrijven_Register_Weerwoord_1, {
+        map.createPane('pane_KBK20_Straatassen_1');
+        map.getPane('pane_KBK20_Straatassen_1').style.zIndex = 401;
+        map.getPane('pane_KBK20_Straatassen_1').style['mix-blend-mode'] = 'normal';
+        var layer_KBK20_Straatassen_1 = new L.geoJson(json_KBK20_Straatassen_1, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Bedrijven_Register_Weerwoord_1',
-            layerName: 'layer_Bedrijven_Register_Weerwoord_1',
-            pane: 'pane_Bedrijven_Register_Weerwoord_1',
-            onEachFeature: pop_Bedrijven_Register_Weerwoord_1,
-            pointToLayer: function (feature, latlng) {
-                var context = {
-                    feature: feature,
-                    variables: {}
-                };
-                return L.circleMarker(latlng, style_Bedrijven_Register_Weerwoord_1_0(feature));
-            },
+            dataVar: 'json_KBK20_Straatassen_1',
+            layerName: 'layer_KBK20_Straatassen_1',
+            pane: 'pane_KBK20_Straatassen_1',
+            onEachFeature: pop_KBK20_Straatassen_1,
+            style: style_KBK20_Straatassen_1_0,
         });
-        bounds_group.addLayer(layer_Bedrijven_Register_Weerwoord_1);
-        map.addLayer(layer_Bedrijven_Register_Weerwoord_1);
+        bounds_group.addLayer(layer_KBK20_Straatassen_1);
+        map.addLayer(layer_KBK20_Straatassen_1);
             var title = new L.Control();
             title.onAdd = function (map) {
                 this._div = L.DomUtil.create('div', 'info');
@@ -223,7 +161,7 @@
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/Bedrijven_Register_Weerwoord_1.png" /> Bedrijven_Register_Weerwoord': layer_Bedrijven_Register_Weerwoord_1,"OSM Standard": layer_OSMStandard_0,}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/KBK20_Straatassen_1.png" /> KBK20_Straatassen': layer_KBK20_Straatassen_1,"OSM Standard": layer_OSMStandard_0,}).addTo(map);
         setBounds();
         </script>
     </body>
