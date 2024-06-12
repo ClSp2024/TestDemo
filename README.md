@@ -1,2 +1,2 @@
 # TestDemo
-Bedrijven in Rotterdam
+Een test kaart voor publiceren met QGIS
